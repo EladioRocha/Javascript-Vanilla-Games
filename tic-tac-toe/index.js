@@ -40,12 +40,12 @@ function handleRestartGame() {
   currentPlayer = "X"
   restartGameState()
   handleStatusDisplay(CURRENT_PLAYER_TURN())
-  document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "")
+  document.querySelectorAll('.game-cell').forEach(cell => cell.innerHTML = "")
 }
 
 function handleCellClick(clickedCellEvent /** Type Event **/) {
   const clickedCell = clickedCellEvent.target
-  if (clickedCell.classList.contains('cell')) {
+  if (clickedCell.classList.contains('game-cell')) {
     const clickedCellIndex = Array.from(clickedCell.parentNode.children).indexOf(clickedCell)
     if (GAME_STATE[clickedCellIndex] !== '' || !gameActive) {
       return false
