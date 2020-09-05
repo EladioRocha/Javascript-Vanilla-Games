@@ -1,0 +1,12 @@
+.game-container {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: grey;
+}
+
+.game-container div {
+  height: 40px;
+  width: 40px;
+}
