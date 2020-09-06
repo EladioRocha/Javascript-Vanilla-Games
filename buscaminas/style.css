@@ -10,3 +10,11 @@
   height: 40px;
   width: 40px;
 }
+
+.bomb {
+  background-color: rgb(168, 0, 0);
+}
+
+.checked {
+  background-color: rgb(11, 122, 11);
+}
