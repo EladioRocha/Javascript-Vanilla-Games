@@ -3,18 +3,39 @@
   width: 400px;
   display: flex;
   flex-wrap: wrap;
-  background-color: grey;
+  background-color: rgb(185, 185, 185);
 }
 
 .game-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 40px;
   width: 40px;
+  box-shadow: 0 1px 6px rgba(114, 114, 114, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.bomb {
-  background-color: rgb(168, 0, 0);
+.flag {
+  color: rgb(131, 3, 3)
 }
 
 .checked {
-  background-color: rgb(11, 122, 11);
+  background-color: rgb(223, 223, 223) !important;
+}
+
+.txt-blue {
+  color: rgb(20, 98, 243);
+}
+
+.txt-green {
+  color: rgb(9, 145, 9);
+}
+
+.txt-red {
+  color: rgb(121, 0, 0);
+}
+
+.txt-purple {
+  color: rgb(47, 26, 168);
 }

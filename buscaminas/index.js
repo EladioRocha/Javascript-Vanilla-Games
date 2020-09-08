@@ -60,12 +60,26 @@ function handleCellClick(square) {
     if(total != 0) {
       square.className = 'checked'
       square.innerText = total
+      addColorText(square, total)
     } else {
       checkNeighbordSquares(square, square.id)
       square.className = 'checked'
     }
-    console.log(total)
   }
+}
+
+function addColorText(square, total) {
+  let color = ''
+  if(total == 1) {
+    color = 'txt-blue'
+  } else if (total == 2) {
+    color = 'txt-green'
+  } else if (total == 3) {
+    color = 'txt-red'
+  } else if (total == 4) {
+    color = 'txt-purple'
+  }
+  square.classList.add(color)
 }
 
 function checkNeighbordSquares(square, currentId) {
@@ -120,7 +134,7 @@ function gameOver() {
   gameActive = false
   for(const square of SQUARES) {
     if(square.classList.contains('bomb')) {
-      square.innerText = 'X'
+      square.innerHTML = '&#128163;'
     }
   }
 }
@@ -131,12 +145,12 @@ function addFlag(square) {
   if(!square.classList.contains('checked') && (flags < BOMB_AMOUNT)) {
     if(!square.classList.contains('flag')) {
       square.classList.add('flag')
-      square.innerText = 'F'
+      square.innerHTML = '&#9873;'
       flags++
       handleFlags()
     } else {
       square.classList.remove('flag')
-      square.innerText = ''
+      square.innerHTML = ''
       flags--
     }
   }
@@ -151,6 +165,7 @@ function handleFlags() {
     if(matches === BOMB_AMOUNT) {
       gameActive = false
       alert('Eres el ganador!!!!')
+      break
     }
   }
 }
